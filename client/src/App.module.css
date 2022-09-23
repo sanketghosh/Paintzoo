@@ -1,0 +1,16 @@
+body,
+html {
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(120deg, #ff3700, #ff133e);
+  color: aliceblue;
+}
+
+.cardsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px 10px;
+  gap: 20px;
+  margin: 20px 0px;
+}

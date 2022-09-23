@@ -1,0 +1,71 @@
+.cardWrapper {
+  padding: 5px;
+  border: 1px solid aliceblue;
+  height: 355px;
+  width: 280px;
+  background: aliceblue;
+  color: black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 4px;
+}
+
+.cardImage {
+  margin-top: 2px;
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.productDesc {
+  margin-top: 10px;
+  font-size: 13px;
+  text-align: center;
+}
+.productPrice {
+  margin-top: 15px;
+}
+.priceText {
+  font-weight: 600;
+}
+
+.btnContainer {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.updateBtn {
+  padding: 7px 17px;
+  border: 1px solid #139176;
+  outline: none;
+  color: #139176;
+  border-radius: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: capitalize;
+  background: transparent;
+}
+.updateBtn:hover {
+  background: #139176;
+  color: aliceblue;
+}
+
+.deleteBtn {
+  padding: 7px 17px;
+  border: 1px solid #f61004;
+  outline: none;
+  color: #f61004;
+  border-radius: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: capitalize;
+  background: transparent;
+}
+.deleteBtn:hover {
+  background: #f61004;
+  color: aliceblue;
+}

@@ -1,0 +1,52 @@
+.headerContainer {
+  height: 60px;
+  background: aliceblue;
+  display: flex;
+  color: black;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+.navItems {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.listItem {
+  font-weight: 600;
+  color: #ff3700;
+  cursor: pointer;
+}
+
+.addItem {
+  border: 2px solid #ff133e;
+  padding: 5px 20px;
+  background: transparent;
+  color: #ff133e;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.addItem:hover {
+  background: linear-gradient(120deg, #ff3700, #ff133e);
+  color: aliceblue;
+}
+
+.headerText {
+  cursor: pointer;
+  color: pink;
+  background: linear-gradient(120deg, #ff3700, #ff133e);
+  color: aliceblue;
+  padding: 4px 18px;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.headerText:hover {
+  background: linear-gradient(120deg, #ff133e, #ff3700);
+}
