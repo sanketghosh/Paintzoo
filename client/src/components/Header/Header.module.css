@@ -1,11 +1,26 @@
 .headerContainer {
   height: 60px;
-  background: aliceblue;
+  background: var(--darkGray);
   display: flex;
-  color: black;
   align-items: center;
   justify-content: space-between;
   padding: 0px 20px;
+  top: 0;
+  position: sticky;
+}
+
+.headerText {
+  cursor: pointer;
+  background: linear-gradient(120deg, var(--redOrange), var(--redPink));
+  color: var(--primaryGray);
+  padding: 4px 18px;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.headerText:hover {
+  background: linear-gradient(120deg, var(--redPink), var(--redOrange));
 }
 
 .navItems {
@@ -17,36 +32,28 @@
 
 .listItem {
   font-weight: 600;
-  color: #ff3700;
+  color: var(--redOrange);
   cursor: pointer;
+}
+.listItem:hover {
+  color: var(--redPink);
 }
 
 .addItem {
-  border: 2px solid #ff133e;
+  border: 2px solid var(--tealBlue);
   padding: 5px 20px;
   background: transparent;
-  color: #ff133e;
-  font-weight: 500;
+  color: var(--primaryGray);
+  font-weight: 600;
+  background: var(--tealBlue);
   font-size: 15px;
   border-radius: 4px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 .addItem:hover {
-  background: linear-gradient(120deg, #ff3700, #ff133e);
-  color: aliceblue;
-}
-
-.headerText {
-  cursor: pointer;
-  color: pink;
-  background: linear-gradient(120deg, #ff3700, #ff133e);
-  color: aliceblue;
-  padding: 4px 18px;
-  border-radius: 3px;
-  font-weight: 600;
-  font-size: 26px;
-}
-
-.headerText:hover {
-  background: linear-gradient(120deg, #ff133e, #ff3700);
+  background: var(--tealBlueDark);
 }

@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-
+import { BiAddToQueue } from "react-icons/bi";
 import React from "react";
 
 export default function Header() {
@@ -12,7 +12,10 @@ export default function Header() {
         <li className={styles.listItem}>Contact Us</li>
       </ul>
 
-      <button className={styles.addItem}>Add Item</button>
+      <button className={styles.addItem}>
+        Add Item
+        <BiAddToQueue />
+      </button>
     </div>
   );
 }

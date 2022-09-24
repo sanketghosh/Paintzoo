@@ -1,14 +1,14 @@
 .cardWrapper {
   padding: 5px;
-  border: 1px solid aliceblue;
-  height: 355px;
+  height: 390px;
   width: 280px;
-  background: aliceblue;
-  color: black;
+  background: var(--primaryGray);
+  color: var(--darkGray);
   display: flex;
   align-items: center;
   flex-direction: column;
   border-radius: 4px;
+  box-shadow: 3px 3px 10px 2px #3838386c;
 }
 
 .cardImage {
@@ -16,6 +16,10 @@
   height: 160px;
   width: 100%;
   object-fit: cover;
+}
+
+.imgTitle {
+  margin-top: 5px;
 }
 
 .productDesc {
@@ -39,33 +43,47 @@
 }
 
 .updateBtn {
-  padding: 7px 17px;
-  border: 1px solid #139176;
+  padding: 7px 15px;
+  border: 1px solid var(--tealBlue);
   outline: none;
-  color: #139176;
-  border-radius: 2px;
+  color: var(--tealBlue);
+  border-radius: 5px;
   font-weight: 600;
   cursor: pointer;
   text-transform: capitalize;
   background: transparent;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 }
 .updateBtn:hover {
-  background: #139176;
-  color: aliceblue;
+  background: var(--tealBlue);
+  color: var(--primaryGray);
+}
+.updtIcon {
+  font-size: 17px;
 }
 
 .deleteBtn {
-  padding: 7px 17px;
-  border: 1px solid #f61004;
+  padding: 7px 15px;
+  border: 1px solid var(--redPink);
   outline: none;
-  color: #f61004;
-  border-radius: 2px;
+  color: var(--redPink);
+  border-radius: 5px;
   font-weight: 600;
   cursor: pointer;
   text-transform: capitalize;
   background: transparent;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 }
 .deleteBtn:hover {
-  background: #f61004;
-  color: aliceblue;
+  background: var(--redPink);
+  color: var(--primaryGray);
+}
+.dltIcon {
+  font-size: 17px;
 }
