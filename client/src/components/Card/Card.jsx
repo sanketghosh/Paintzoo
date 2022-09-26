@@ -3,6 +3,7 @@ import styles from "./Card.module.css";
 import { RiDeleteBinFill } from "react-icons/ri";
 import { MdTipsAndUpdates } from "react-icons/md";
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Card() {
   return (
@@ -19,9 +20,11 @@ export default function Card() {
         <span className={styles.priceText}>$299</span>
       </div>
       <div className={styles.btnContainer}>
-        <button className={styles.updateBtn}>
-          update <MdTipsAndUpdates className={styles.updtIcon} />
-        </button>
+        <Link to="/update" style={{ textDecoration: "none" }}>
+          <button className={styles.updateBtn}>
+            update <MdTipsAndUpdates className={styles.updtIcon} />
+          </button>
+        </Link>
         <button className={styles.deleteBtn}>
           delete
           <RiDeleteBinFill className={styles.dltIcon} />

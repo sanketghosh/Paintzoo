@@ -1,12 +1,11 @@
 import React from "react";
-import styles from "./UpdateItem.module.css";
-
-export default function UpdateItem() {
+import styles from "./UploadNewItem.module.css";
+export default function UploadNewItem() {
   return (
     <>
-      <div className={styles.updateFormWrapper}>
-        <form className={styles.updateForm}>
-          <h1 className={styles.updateTitle}>Update Your Item</h1>
+      <div className={styles.uploadFormWrapper}>
+        <form className={styles.uploadForm}>
+          <h1 className={styles.uploadTitle}>Upload Your Item</h1>
           <div className={styles.formItem}>
             <label className={styles.formItemLabel}>Paint Title*</label>
             <input
@@ -37,7 +36,7 @@ export default function UpdateItem() {
               className={styles.formItemInput}
             />
           </div>
-          <button className={styles.submitUpdateBtn}>Update Preferences</button>
+          <button className={styles.submitUploadBtn}>Upload Your Item</button>
         </form>
       </div>
     </>

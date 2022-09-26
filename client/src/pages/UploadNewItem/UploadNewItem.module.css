@@ -1,11 +1,11 @@
-.updateFormWrapper {
+.uploadFormWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   height: calc(100vh - 60px);
 }
 
-.updateForm {
+.uploadForm {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +17,7 @@
   box-shadow: 4px 4px 5px 0px #717171aa;
 }
 
-.updateTitle {
+.uploadTitle {
   margin-top: 6px;
   font-size: 21px;
   background: var(--tealBlue);
@@ -59,7 +59,7 @@
   border: var(--primaryGrayDarker);
 }
 
-.submitUpdateBtn {
+.submitUploadBtn {
   margin: 6px 0px;
   padding: 9px 12px;
   border: none;
@@ -70,6 +70,6 @@
   border-radius: 4px;
   cursor: pointer;
 }
-.submitUpdateBtn:hover {
+.submitUploadBtn:hover {
   background: var(--tealBlueDark);
 }

@@ -4,13 +4,3 @@ html {
   background: var(--primaryGrayDarker);
   color: var(--primaryGray);
 }
-
-.cardsContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 20px 10px;
-  gap: 20px;
-  margin: 35px 0px 20px 0px;
-}
