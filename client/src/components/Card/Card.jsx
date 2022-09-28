@@ -4,24 +4,34 @@ import { RiDeleteBinFill } from "react-icons/ri";
 import { MdTipsAndUpdates } from "react-icons/md";
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-export default function Card({ title, desc, image }) {
+export default function Card({ id, title, desc, image, price }) {
+  const deleteHandler = async (paintId) => {
+    try {
+      await axios.delete("http://localhost:5000/api/paints/" + paintId);
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className={styles.cardWrapper}>
-      <img src="./images/img01.jpg" alt="image" className={styles.cardImage} />
+      {image && <img src={image} alt="image" className={styles.cardImage} />}
       <h2 className={styles.imgTitle}>{title}</h2>
       <p className={styles.productDesc}>{desc}</p>
       <div className={styles.productPrice}>
         <span className={styles.priceText}>Price: </span>
-        <span className={styles.priceText}>$299</span>
+        <span className={styles.priceText}>${price}</span>
       </div>
       <div className={styles.btnContainer}>
-        <Link to="/update" style={{ textDecoration: "none" }}>
+        <Link to={`/update/${id}`} style={{ textDecoration: "none" }}>
           <button className={styles.updateBtn}>
             update <MdTipsAndUpdates className={styles.updtIcon} />
           </button>
         </Link>
-        <button className={styles.deleteBtn}>
+        <button className={styles.deleteBtn} onClick={() => deleteHandler(id)}>
           delete
           <RiDeleteBinFill className={styles.dltIcon} />
         </button>

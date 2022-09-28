@@ -19,12 +19,15 @@ export default function Paints() {
   }, []);
   return (
     <>
+      <h1 className={styles.headingOfHome}>Your Paint Shop</h1>
       <div className={styles.cardsContainer}>
         {paints.map((paint) => (
           <Card
+            id={paint.id}
             key={paint.id}
             title={paint.title}
             desc={paint.desc}
+            price={paint.price}
             image={paint.image}
           />
         ))}

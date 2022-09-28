@@ -1,6 +1,32 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./UploadNewItem.module.css";
+
 export default function UploadNewItem() {
+  const [inputs, setInputs] = useState({
+    title: "",
+    desc: "",
+    price: null,
+    image: "",
+  });
+  const navigate = useNavigate();
+
+  const handleChange = (event) => {
+    setInputs((prev) => ({ ...prev, [event.target.name]: event.target.value }));
+  };
+
+  const clickHandler = async (event) => {
+    event.preventDefault();
+
+    try {
+      await axios.post("http://localhost:5000/api/paints", inputs);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className={styles.uploadFormWrapper}>
@@ -12,6 +38,8 @@ export default function UploadNewItem() {
               type="text"
               placeholder="Enter the paint title"
               className={styles.formItemInput}
+              onChange={handleChange}
+              name="price"
             />
           </div>
           <div className={styles.formItem}>
@@ -19,6 +47,8 @@ export default function UploadNewItem() {
             <textarea
               placeholder="Description of your paint"
               className={styles.formItemInputTextarea}
+              onChange={handleChange}
+              name="desc"
             ></textarea>
           </div>
           <div className={styles.formItem}>
@@ -27,6 +57,8 @@ export default function UploadNewItem() {
               type="number"
               placeholder="Enter paint price"
               className={styles.formItemInput}
+              onChange={handleChange}
+              name="price"
             />
           </div>
           <div className={styles.formItem}>
@@ -34,9 +66,13 @@ export default function UploadNewItem() {
             <input
               placeholder="Enter image url here"
               className={styles.formItemInput}
+              onChange={handleChange}
+              name="image"
             />
           </div>
-          <button className={styles.submitUploadBtn}>Upload Your Item</button>
+          <button className={styles.submitUploadBtn} onClick={clickHandler}>
+            Upload Your Item
+          </button>
         </form>
       </div>
     </>

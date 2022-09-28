@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Paints />} />
-          <Route path="/update" element={<UpdateItem />} />
+          <Route path="/update/:id" element={<UpdateItem />} />
           <Route path="/uploaditem" element={<UploadNewItem />} />
         </Routes>
       </BrowserRouter>

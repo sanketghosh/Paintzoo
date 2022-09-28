@@ -1,7 +1,36 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./UpdateItem.module.css";
 
 export default function UpdateItem() {
+  const [inputs, setInputs] = useState({
+    title: "",
+    desc: "",
+    price: null,
+    image: "",
+  });
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const paintId = location.pathname.split("/")[2];
+  // console.log(location.pathname.split("/")[2]);
+
+  const handleChange = (event) => {
+    setInputs((prev) => ({ ...prev, [event.target.name]: event.target.value }));
+  };
+
+  const clickHandler = async (event) => {
+    event.preventDefault();
+
+    try {
+      await axios.put("http://localhost:5000/api/paints/" + paintId, inputs);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className={styles.updateFormWrapper}>
@@ -13,6 +42,8 @@ export default function UpdateItem() {
               type="text"
               placeholder="Enter the paint title"
               className={styles.formItemInput}
+              name="title"
+              onChange={handleChange}
             />
           </div>
           <div className={styles.formItem}>
@@ -20,6 +51,8 @@ export default function UpdateItem() {
             <textarea
               placeholder="Description of your paint"
               className={styles.formItemInputTextarea}
+              name="desc"
+              onChange={handleChange}
             ></textarea>
           </div>
           <div className={styles.formItem}>
@@ -28,6 +61,8 @@ export default function UpdateItem() {
               type="number"
               placeholder="Enter paint price"
               className={styles.formItemInput}
+              name="price"
+              onChange={handleChange}
             />
           </div>
           <div className={styles.formItem}>
@@ -35,9 +70,13 @@ export default function UpdateItem() {
             <input
               placeholder="Enter image url here"
               className={styles.formItemInput}
+              name="image"
+              onChange={handleChange}
             />
           </div>
-          <button className={styles.submitUpdateBtn}>Update Preferences</button>
+          <button className={styles.submitUpdateBtn} onClick={clickHandler}>
+            Update Preferences
+          </button>
         </form>
       </div>
     </>

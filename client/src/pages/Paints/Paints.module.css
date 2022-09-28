@@ -1,3 +1,9 @@
+.headingOfHome {
+  text-align: center;
+  color: var(--redOrange);
+  margin: 20px 0px;
+}
+
 .cardsContainer {
   display: flex;
   align-items: center;
